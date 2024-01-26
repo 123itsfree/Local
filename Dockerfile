@@ -16,5 +16,8 @@ RUN curl -L -o pufferpanel.zip https://gitlab.com/pufferpanel/pufferpanel/-/jobs
 # Expose the necessary ports
 EXPOSE 8080
 
+# Create an admin user during image build
+RUN /opt/pufferpanel/pufferpanel user:add --admin --email=zamanrahid0@gmail.com --username=123itsfree --password=rahidrifat1234567890
+
 # Start PufferPanel
 CMD ["/opt/pufferpanel/pufferpanel"]
